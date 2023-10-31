@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var hotelRouter = require('./routes/Hotel');
+var hotelRouter = require('./routes/hotel');
 var boardRouter = require('./routes/board');
 var chooseRouter= require('./routes/choose');
 
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/Hotel', hotelRouter );
+app.use('/hotel', hotelRouter );
 app.use('/board', boardRouter);
 app.use('/choose',chooseRouter);
 
@@ -46,5 +46,4 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
 module.exports = app;
